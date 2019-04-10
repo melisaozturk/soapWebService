@@ -74,7 +74,7 @@
 		1E19B9C7225AC74C001F49C7 /* ListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListCell.m; sourceTree = "<group>"; };
 		1E19B9CA225ACBCA001F49C7 /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		1E19B9CB225ACBCA001F49C7 /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
-		1ED9F5342257BC700063FE66 /* IMBKProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMBKProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ED9F5342257BC700063FE66 /* IMKBProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMKBProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED9F5372257BC700063FE66 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1ED9F5382257BC700063FE66 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1ED9F53A2257BC700063FE66 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -84,10 +84,10 @@
 		1ED9F5432257BC720063FE66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1ED9F5452257BC720063FE66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1ED9F5462257BC720063FE66 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1ED9F54C2257BC730063FE66 /* IMBKProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMBKProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ED9F54C2257BC730063FE66 /* IMKBProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMKBProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED9F5502257BC730063FE66 /* IMBKProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMBKProjectTests.m; sourceTree = "<group>"; };
 		1ED9F5522257BC730063FE66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1ED9F5572257BC730063FE66 /* IMBKProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMBKProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ED9F5572257BC730063FE66 /* IMKBProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMKBProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED9F55B2257BC730063FE66 /* IMBKProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMBKProjectUITests.m; sourceTree = "<group>"; };
 		1ED9F55D2257BC730063FE66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1ED9F571225802920063FE66 /* SOAPEngine64.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SOAPEngine64.framework; path = "../../Downloads/SOAPEngine-master/SOAPEngine64.framework"; sourceTree = "<group>"; };
@@ -174,9 +174,9 @@
 		1ED9F5352257BC700063FE66 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1ED9F5342257BC700063FE66 /* IMBKProject.app */,
-				1ED9F54C2257BC730063FE66 /* IMBKProjectTests.xctest */,
-				1ED9F5572257BC730063FE66 /* IMBKProjectUITests.xctest */,
+				1ED9F5342257BC700063FE66 /* IMKBProject.app */,
+				1ED9F54C2257BC730063FE66 /* IMKBProjectTests.xctest */,
+				1ED9F5572257BC730063FE66 /* IMKBProjectUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -240,9 +240,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1ED9F5332257BC700063FE66 /* IMBKProject */ = {
+		1ED9F5332257BC700063FE66 /* IMKBProject */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1ED9F5602257BC730063FE66 /* Build configuration list for PBXNativeTarget "IMBKProject" */;
+			buildConfigurationList = 1ED9F5602257BC730063FE66 /* Build configuration list for PBXNativeTarget "IMKBProject" */;
 			buildPhases = (
 				1ED9F5302257BC700063FE66 /* Sources */,
 				1ED9F5312257BC700063FE66 /* Frameworks */,
@@ -252,14 +252,14 @@
 			);
 			dependencies = (
 			);
-			name = IMBKProject;
+			name = IMKBProject;
 			productName = IMBKProject;
-			productReference = 1ED9F5342257BC700063FE66 /* IMBKProject.app */;
+			productReference = 1ED9F5342257BC700063FE66 /* IMKBProject.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1ED9F54B2257BC730063FE66 /* IMBKProjectTests */ = {
+		1ED9F54B2257BC730063FE66 /* IMKBProjectTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1ED9F5632257BC730063FE66 /* Build configuration list for PBXNativeTarget "IMBKProjectTests" */;
+			buildConfigurationList = 1ED9F5632257BC730063FE66 /* Build configuration list for PBXNativeTarget "IMKBProjectTests" */;
 			buildPhases = (
 				1ED9F5482257BC730063FE66 /* Sources */,
 				1ED9F5492257BC730063FE66 /* Frameworks */,
@@ -270,14 +270,14 @@
 			dependencies = (
 				1ED9F54E2257BC730063FE66 /* PBXTargetDependency */,
 			);
-			name = IMBKProjectTests;
+			name = IMKBProjectTests;
 			productName = IMBKProjectTests;
-			productReference = 1ED9F54C2257BC730063FE66 /* IMBKProjectTests.xctest */;
+			productReference = 1ED9F54C2257BC730063FE66 /* IMKBProjectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1ED9F5562257BC730063FE66 /* IMBKProjectUITests */ = {
+		1ED9F5562257BC730063FE66 /* IMKBProjectUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1ED9F5662257BC730063FE66 /* Build configuration list for PBXNativeTarget "IMBKProjectUITests" */;
+			buildConfigurationList = 1ED9F5662257BC730063FE66 /* Build configuration list for PBXNativeTarget "IMKBProjectUITests" */;
 			buildPhases = (
 				1ED9F5532257BC730063FE66 /* Sources */,
 				1ED9F5542257BC730063FE66 /* Frameworks */,
@@ -288,9 +288,9 @@
 			dependencies = (
 				1ED9F5592257BC730063FE66 /* PBXTargetDependency */,
 			);
-			name = IMBKProjectUITests;
+			name = IMKBProjectUITests;
 			productName = IMBKProjectUITests;
-			productReference = 1ED9F5572257BC730063FE66 /* IMBKProjectUITests.xctest */;
+			productReference = 1ED9F5572257BC730063FE66 /* IMKBProjectUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -316,7 +316,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1ED9F52F2257BC700063FE66 /* Build configuration list for PBXProject "IMBKProject" */;
+			buildConfigurationList = 1ED9F52F2257BC700063FE66 /* Build configuration list for PBXProject "IMKBProject" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -329,9 +329,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1ED9F5332257BC700063FE66 /* IMBKProject */,
-				1ED9F54B2257BC730063FE66 /* IMBKProjectTests */,
-				1ED9F5562257BC730063FE66 /* IMBKProjectUITests */,
+				1ED9F5332257BC700063FE66 /* IMKBProject */,
+				1ED9F54B2257BC730063FE66 /* IMKBProjectTests */,
+				1ED9F5562257BC730063FE66 /* IMKBProjectUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -410,12 +410,12 @@
 /* Begin PBXTargetDependency section */
 		1ED9F54E2257BC730063FE66 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1ED9F5332257BC700063FE66 /* IMBKProject */;
+			target = 1ED9F5332257BC700063FE66 /* IMKBProject */;
 			targetProxy = 1ED9F54D2257BC730063FE66 /* PBXContainerItemProxy */;
 		};
 		1ED9F5592257BC730063FE66 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1ED9F5332257BC700063FE66 /* IMBKProject */;
+			target = 1ED9F5332257BC700063FE66 /* IMKBProject */;
 			targetProxy = 1ED9F5582257BC730063FE66 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -612,7 +612,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.melisaozturk.IMBKProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IMBKProject.app/IMBKProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IMKBProject.app/IMKBProject";
 			};
 			name = Debug;
 		};
@@ -631,7 +631,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.melisaozturk.IMBKProjectTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IMBKProject.app/IMBKProject";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IMKBProject.app/IMKBProject";
 			};
 			name = Release;
 		};
@@ -674,7 +674,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1ED9F52F2257BC700063FE66 /* Build configuration list for PBXProject "IMBKProject" */ = {
+		1ED9F52F2257BC700063FE66 /* Build configuration list for PBXProject "IMKBProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1ED9F55E2257BC730063FE66 /* Debug */,
@@ -683,7 +683,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1ED9F5602257BC730063FE66 /* Build configuration list for PBXNativeTarget "IMBKProject" */ = {
+		1ED9F5602257BC730063FE66 /* Build configuration list for PBXNativeTarget "IMKBProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1ED9F5612257BC730063FE66 /* Debug */,
@@ -692,7 +692,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1ED9F5632257BC730063FE66 /* Build configuration list for PBXNativeTarget "IMBKProjectTests" */ = {
+		1ED9F5632257BC730063FE66 /* Build configuration list for PBXNativeTarget "IMKBProjectTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1ED9F5642257BC730063FE66 /* Debug */,
@@ -701,7 +701,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1ED9F5662257BC730063FE66 /* Build configuration list for PBXNativeTarget "IMBKProjectUITests" */ = {
+		1ED9F5662257BC730063FE66 /* Build configuration list for PBXNativeTarget "IMKBProjectUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1ED9F5672257BC730063FE66 /* Debug */,

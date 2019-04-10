@@ -73,6 +73,7 @@
 
 -(void)parserDidStartDocument:(NSXMLParser *)parser{
     // Initialize the data array.
+    self.results = [[NSMutableArray alloc] init];
 }
 
 -(void)parserDidEndDocument:(NSXMLParser *)parser{

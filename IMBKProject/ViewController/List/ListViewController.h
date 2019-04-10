@@ -24,17 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(strong, nonatomic)NSMutableString *volumeData;
 @property(strong, nonatomic)NSMutableString *countData;
 
-//IMKB-30
-//@property(strong, nonatomic)NSMutableString *symbolData;
-@property(strong, nonatomic)NSMutableString *gainData;
-@property(strong, nonatomic)NSMutableString *fundData;
-@property(strong, nonatomic)NSMutableString *nameData;
-
 @property(nonatomic, strong)NSMutableArray *resultsList;
 
 @property (nonatomic, strong) NSXMLParser *xmlParserList;
 
-@property (nonatomic, strong) NSMutableArray *arrNeighboursData;
 @property (nonatomic, strong) NSMutableArray *arrData;
 @property (nonatomic, strong) NSMutableDictionary *dictTempDataStorage; //we’ll temporarily store the two values we seek until we add it to the array.
 @property (nonatomic, strong) NSMutableString *foundValue; // used to store the found characters of the elements of interest.

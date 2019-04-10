@@ -44,7 +44,6 @@
         
         if ( myDif < 0){
 //            NSLog(@"%.2f düşen", myDif);
-            
             [self.arrIMKBData addObject: self.arrListData[i]];
         }
 //        NSLog(@"%@",self.arrIMKBData);
@@ -77,7 +76,6 @@
                                                   self.xmlParserList=[[NSXMLParser alloc] initWithData:dataList];
                                                   self.xmlParserList.delegate=self;
                                                   // Initialize the mutable string that we'll use during parsing.
-//                                                  self.foundValue = [[NSMutableString alloc] init];
                                                   self.foundListValue = [[NSMutableString alloc] init];
                                                   
                                                   [self.xmlParserList parse];
@@ -91,15 +89,12 @@
 //  XML Parse
 
 -(void)parserDidStartDocument:(NSXMLParser *)parser{
-    // Initialize the neighbours data array.
-//    self.arrNeighboursData = [[NSMutableArray alloc] init];
+    // Initialize the data array.
     self.arrListData = [[NSMutableArray alloc] init];
     
 }
 
 -(void)parserDidEndDocument:(NSXMLParser *)parser{
-    //    NSLog(@"%@",self.arrSymbolData);
-    //    self.temp = self.arrSymbolData[0];;
     [self get];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tblLowest reloadData];
@@ -108,27 +103,17 @@
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName attributes:(NSDictionary<NSString *, NSString *> *)attributeDict{
     // If the current element name is equal to "StockandIndex" then initialize the temporary dictionary.
-    
-//    if ([elementName isEqualToString:@"IMKB50"]) {
-//        self.dictTempDataStorage = [[NSMutableDictionary alloc] init];
-//    }
     if ([elementName isEqualToString:@"StockandIndex"]) {
         self.dictTempListStorage = [[NSMutableDictionary alloc] init];
     }
     
     // Keep the current element.
-    self.currentElement = elementName;
     self.currentListElement = elementName;
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
     // Store the found characters if only we're interested in the current element.
-//    if ([self.currentElement isEqualToString:@"Symbol"] || [self.currentElement isEqualToString:@"Name"] || [self.currentElement isEqualToString:@"Gain"] || [self.currentElement isEqualToString:@"Fund"]) {
-//
-//        if (![string isEqualToString:@"\n"]) {
-//            [self.foundValue appendString:string];
-//        }
-//    }
+    
     if ([self.currentListElement isEqualToString:@"Symbol"] || [self.currentListElement isEqualToString:@"Price"] || [self.currentListElement isEqualToString:@"Difference"] || [self.currentListElement isEqualToString:@"Volume"] || [self.currentListElement isEqualToString:@"Buying"] || [self.currentListElement isEqualToString:@"Selling"] || [self.currentListElement isEqualToString:@"Hour"] || [self.currentListElement isEqualToString:@"Total"] || [self.currentListElement isEqualToString:@"DayPeakPrice"] || [self.currentListElement isEqualToString:@"DayLowestPrice"]) {
         
         if (![string isEqualToString:@"\n"]) {
@@ -138,27 +123,9 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName{
-    
-//    if ([elementName isEqualToString:@"IMKB50"]) {
-//        // If the closing element equals to "geoname" then the all the data of a neighbour country has been parsed and the dictionary should be added to the neighbours data array.
-//        [self.arrNeighboursData addObject:[[NSDictionary alloc] initWithDictionary:self.dictTempDataStorage]];
-//    }
-//    else if ([elementName isEqualToString:@"Fund"]){
-//        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"Fund"];
-//    }
-//    else if ([elementName isEqualToString:@"Gain"]){
-//        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"Gain"];
-//    }
-//    else if ([elementName isEqualToString:@"Name"]){
-//        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"Name"];
-//    }
-//    else if ([elementName isEqualToString:@"Symbol"]){
-//        [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"Symbol"];
-//    }
     if ([elementName isEqualToString:@"StockandIndex"]) {
-        // If the closing element equals to "geoname" then the all the data of a neighbour country has been parsed and the dictionary should be added to the neighbours data array.
+        // If the closing element equals to "StockandIndex" then the all the data of a has been parsed and the dictionary should be added to the array.
         [self.arrListData addObject:[[NSDictionary alloc] initWithDictionary:self.dictTempListStorage]];
-        
     }
     else if ([elementName isEqualToString:@"Symbol"]){
         [self.dictTempListStorage setObject:[NSString stringWithString:self.foundListValue] forKey:@"Symbol"];
@@ -192,7 +159,6 @@
         [self.dictTempListStorage setObject:[NSString stringWithString:self.foundListValue] forKey:@"DayPeakPrice"];
     }
     //     Clear the mutable string.
-//    [self.foundValue setString:@""];
     [self.foundListValue setString:@""];
     
 }
@@ -249,7 +215,6 @@
         detailVC.countData = self.countData;
         detailVC.changeData = self.changeData;
         detailVC.key = self.myKey;
-        
         //        NSLog(@"%@" , myIndexPath);
     }
 }

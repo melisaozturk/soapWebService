@@ -34,10 +34,6 @@
 
 -(void) List {
 //    NSLog(@"%@", self.myKey);
-    
-//    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-//    [dateFormatter setDateFormat:@"dd:ww:MM"];
-//    NSString * dateString = [dateFormatter stringFromDate:[NSDate date]];
 
     NSString *soapMessageList = [NSString stringWithFormat: @"<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:tem=\"http://tempuri.org/\"><soapenv:Header/><soapenv:Body><tem:GetForexStocksandIndexesInfo> <tem:request><tem:IsIPAD>true</tem:IsIPAD><tem:DeviceID>test</tem:DeviceID><tem:DeviceType>ipad</tem:DeviceType><tem:RequestKey>%@</tem:RequestKey><tem:Period>Day</tem:Period></tem:request></tem:GetForexStocksandIndexesInfo></soapenv:Body></soapenv:Envelope>", self.myKey];
     
@@ -76,17 +72,15 @@
 //  XML Parse
 
 -(void)parserDidStartDocument:(NSXMLParser *)parser{
-    // Initialize the neighbours data array.
-    self.arrNeighboursData = [[NSMutableArray alloc] init];
+    // Initialize the data array.
+    self.arrData = [[NSMutableArray alloc] init];
 }
 
 -(void)parserDidEndDocument:(NSXMLParser *)parser{
-//    NSLog(@"%@",self.arrSymbolData);
-//    self.temp = self.arrSymbolData[0];;
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tblList reloadData];
     });
-    NSLog(@"%@", self.arrNeighboursData);
+//    NSLog(@"%@", self.arrData);
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName attributes:(NSDictionary<NSString *, NSString *> *)attributeDict{
@@ -111,48 +105,39 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName{
     
     if ([elementName isEqualToString:@"StockandIndex"]) {
-        // If the closing element equals to "geoname" then the all the data of a neighbour country has been parsed and the dictionary should be added to the neighbours data array.
-            [self.arrNeighboursData addObject:[[NSDictionary alloc] initWithDictionary:self.dictTempDataStorage]];
+        // If the closing element equals to "StockandIndex" then the all the data has been parsed and the dictionary should be added to the data array.
+            [self.arrData addObject:[[NSDictionary alloc] initWithDictionary:self.dictTempDataStorage]];
     }
     else if ([elementName isEqualToString:@"Symbol"]){
-        // If the country name element was found then store it.
+        // If the Symbol element was found then store it.
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"Symbol"];
     }
     else if ([elementName isEqualToString:@"Price"]){
-        // If the toponym name element was found then store it.
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"Price"];
     }
     
     else if ([elementName isEqualToString:@"Difference"]){
-        //        [self.dictTempDataStorage setValue:self.foundValue forKey:@"Price"];
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"Difference"];
     }
     else if ([elementName isEqualToString:@"Volume"]){
-        //        [self.dictTempDataStorage setValue:self.foundValue forKey:@"Price"];
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"Volume"];
     }
     else if ([elementName isEqualToString:@"Buying"]){
-        //        [self.dictTempDataStorage setValue:self.foundValue forKey:@"Price"];
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"Buying"];
     }
     else if ([elementName isEqualToString:@"Selling"]){
-        //        [self.dictTempDataStorage setValue:self.foundValue forKey:@"Price"];
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"Selling"];
     }
     else if ([elementName isEqualToString:@"Hour"]){
-        //        [self.dictTempDataStorage setValue:self.foundValue forKey:@"Price"];
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"Hour"];
     }
     else if ([elementName isEqualToString:@"Total"]){
-        //        [self.dictTempDataStorage setValue:self.foundValue forKey:@"Price"];
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"Total"];
     }
     else if ([elementName isEqualToString:@"DayLowestPrice"]){
-        //        [self.dictTempDataStorage setValue:self.foundValue forKey:@"Price"];
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"DayLowestPrice"];
     }
     else if ([elementName isEqualToString:@"DayPeakPrice"]){
-        //        [self.dictTempDataStorage setValue:self.foundValue forKey:@"Price"];
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"DayPeakPrice"];
     }
     
@@ -164,7 +149,7 @@
 // TableView Delegate
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.arrNeighboursData.count;
+    return self.arrData.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -175,13 +160,13 @@
         cell = [nib objectAtIndex:0];
     }
     
-    cell.lblSymbol.text = [[self.arrNeighboursData objectAtIndex:indexPath.row] objectForKey:@"Symbol"];
-    cell.lblPrice.text = [[self.arrNeighboursData objectAtIndex:indexPath.row] objectForKey:@"Price"];
-    cell.lblHour.text = [[self.arrNeighboursData objectAtIndex:indexPath.row] objectForKey:@"Hour"];
-    cell.lblBuying.text = [[self.arrNeighboursData objectAtIndex:indexPath.row] objectForKey:@"Buying"];
-    cell.lblVolume.text = [[self.arrNeighboursData objectAtIndex:indexPath.row] objectForKey:@"Volume"];
-    cell.lblSelling.text = [[self.arrNeighboursData objectAtIndex:indexPath.row] objectForKey:@"Selling"];
-    cell.lblDifference.text = [[self.arrNeighboursData objectAtIndex:indexPath.row] objectForKey:@"Difference"];
+    cell.lblSymbol.text = [[self.arrData objectAtIndex:indexPath.row] objectForKey:@"Symbol"];
+    cell.lblPrice.text = [[self.arrData objectAtIndex:indexPath.row] objectForKey:@"Price"];
+    cell.lblHour.text = [[self.arrData objectAtIndex:indexPath.row] objectForKey:@"Hour"];
+    cell.lblBuying.text = [[self.arrData objectAtIndex:indexPath.row] objectForKey:@"Buying"];
+    cell.lblVolume.text = [[self.arrData objectAtIndex:indexPath.row] objectForKey:@"Volume"];
+    cell.lblSelling.text = [[self.arrData objectAtIndex:indexPath.row] objectForKey:@"Selling"];
+    cell.lblDifference.text = [[self.arrData objectAtIndex:indexPath.row] objectForKey:@"Difference"];
     
     return cell;
 }
@@ -196,13 +181,13 @@
      NSIndexPath *myIndexPath = [self.tblList indexPathForSelectedRow];
     
     if ([segue.identifier isEqualToString:@"DetailSegue"]) {
-            self.symbolData = [[self.arrNeighboursData objectAtIndex:myIndexPath.row] objectForKey:@"Symbol"];
-            self.priceData =  [[self.arrNeighboursData objectAtIndex:myIndexPath.row] objectForKey:@"Price"];
-            self.highData =  [[self.arrNeighboursData objectAtIndex:myIndexPath.row] objectForKey:@"DayPeakPrice"];
-            self.lowData =  [[self.arrNeighboursData objectAtIndex:myIndexPath.row] objectForKey:@"DayLowestPrice"];
-            self.volumeData =  [[self.arrNeighboursData objectAtIndex:myIndexPath.row] objectForKey:@"Volume"];
-            self.countData =  [[self.arrNeighboursData objectAtIndex:myIndexPath.row] objectForKey:@"Total"];
-            self.changeData =  [[self.arrNeighboursData objectAtIndex:myIndexPath.row] objectForKey:@"Difference"];
+            self.symbolData = [[self.arrData objectAtIndex:myIndexPath.row] objectForKey:@"Symbol"];
+            self.priceData =  [[self.arrData objectAtIndex:myIndexPath.row] objectForKey:@"Price"];
+            self.highData =  [[self.arrData objectAtIndex:myIndexPath.row] objectForKey:@"DayPeakPrice"];
+            self.lowData =  [[self.arrData objectAtIndex:myIndexPath.row] objectForKey:@"DayLowestPrice"];
+            self.volumeData =  [[self.arrData objectAtIndex:myIndexPath.row] objectForKey:@"Volume"];
+            self.countData =  [[self.arrData objectAtIndex:myIndexPath.row] objectForKey:@"Total"];
+            self.changeData =  [[self.arrData objectAtIndex:myIndexPath.row] objectForKey:@"Difference"];
         
         DetailViewController *detailVC = segue.destinationViewController;
         detailVC.symbolData = self.symbolData;
@@ -213,7 +198,6 @@
         detailVC.countData = self.countData;
         detailVC.changeData = self.changeData;
         detailVC.key = self.myKey;
-
 //        NSLog(@"%@" , myIndexPath);
     }
 }

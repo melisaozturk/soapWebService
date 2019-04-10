@@ -39,7 +39,7 @@ BOOL isFiltered;
 
 -(void) get {
     
-    for (NSDictionary *item in self.arrNeighboursData) {
+    for (NSDictionary *item in self.arrData) {
         NSString *string = [item objectForKey:@"Symbol"];
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", string];
         NSArray *results = [self.arrListData filteredArrayUsingPredicate:predicate];
@@ -89,7 +89,7 @@ BOOL isFiltered;
 
 -(void)parserDidStartDocument:(NSXMLParser *)parser{
     // Initialize the neighbours data array.
-    self.arrNeighboursData = [[NSMutableArray alloc] init];
+    self.arrData = [[NSMutableArray alloc] init];
     self.arrListData = [[NSMutableArray alloc] init];
     self.filteredData = [[NSMutableArray alloc] init];
 }
@@ -137,7 +137,7 @@ BOOL isFiltered;
     
     if ([elementName isEqualToString:@"IMKB100"]) {
         // If the closing element equals to "geoname" then the all the data of a neighbour country has been parsed and the dictionary should be added to the neighbours data array.
-        [self.arrNeighboursData addObject:[[NSDictionary alloc] initWithDictionary:self.dictTempDataStorage]];
+        [self.arrData addObject:[[NSDictionary alloc] initWithDictionary:self.dictTempDataStorage]];
     }
     else if ([elementName isEqualToString:@"Fund"]){
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"Fund"];
@@ -258,7 +258,7 @@ BOOL isFiltered;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"Detail100" sender:tableView];
+        [self performSegueWithIdentifier:@"Detail100" sender:tableView];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -266,13 +266,26 @@ BOOL isFiltered;
     NSIndexPath *myIndexPath = [self.tbl100 indexPathForSelectedRow];
     
     if ([segue.identifier isEqualToString:@"Detail100"]) {
-        self.symbolData = [[self.arrIMKBData objectAtIndex:myIndexPath.row] objectForKey:@"Symbol"];
-        self.priceData =  [[self.arrIMKBData objectAtIndex:myIndexPath.row] objectForKey:@"Price"];
-        self.highData =  [[self.arrIMKBData objectAtIndex:myIndexPath.row] objectForKey:@"DayPeakPrice"];
-        self.lowData =  [[self.arrIMKBData objectAtIndex:myIndexPath.row] objectForKey:@"DayLowestPrice"];
-        self.volumeData =  [[self.arrIMKBData objectAtIndex:myIndexPath.row] objectForKey:@"Volume"];
-        self.countData =  [[self.arrIMKBData objectAtIndex:myIndexPath.row] objectForKey:@"Total"];
-        self.changeData =  [[self.arrIMKBData objectAtIndex:myIndexPath.row] objectForKey:@"Difference"];
+        if(isFiltered)
+        {
+            self.symbolData = [[self.filteredData objectAtIndex:myIndexPath.row] objectForKey:@"Symbol"];
+            self.priceData =  [[self.filteredData objectAtIndex:myIndexPath.row] objectForKey:@"Price"];
+            self.highData =  [[self.filteredData objectAtIndex:myIndexPath.row] objectForKey:@"DayPeakPrice"];
+            self.lowData =  [[self.filteredData objectAtIndex:myIndexPath.row] objectForKey:@"DayLowestPrice"];
+            self.volumeData =  [[self.filteredData objectAtIndex:myIndexPath.row] objectForKey:@"Volume"];
+            self.countData =  [[self.filteredData objectAtIndex:myIndexPath.row] objectForKey:@"Total"];
+            self.changeData =  [[self.filteredData objectAtIndex:myIndexPath.row] objectForKey:@"Difference"];
+        }
+        else
+        {
+            self.symbolData = [[self.arrIMKBData objectAtIndex:myIndexPath.row] objectForKey:@"Symbol"];
+            self.priceData =  [[self.arrIMKBData objectAtIndex:myIndexPath.row] objectForKey:@"Price"];
+            self.highData =  [[self.arrIMKBData objectAtIndex:myIndexPath.row] objectForKey:@"DayPeakPrice"];
+            self.lowData =  [[self.arrIMKBData objectAtIndex:myIndexPath.row] objectForKey:@"DayLowestPrice"];
+            self.volumeData =  [[self.arrIMKBData objectAtIndex:myIndexPath.row] objectForKey:@"Volume"];
+            self.countData =  [[self.arrIMKBData objectAtIndex:myIndexPath.row] objectForKey:@"Total"];
+            self.changeData =  [[self.arrIMKBData objectAtIndex:myIndexPath.row] objectForKey:@"Difference"];
+        }
         
         DetailViewController *detailVC = segue.destinationViewController;
         detailVC.symbolData = self.symbolData;

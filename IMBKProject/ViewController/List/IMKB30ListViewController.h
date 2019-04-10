@@ -11,7 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IMKB30ListViewController : UIViewController<NSXMLParserDelegate, UITableViewDelegate, UITableViewDataSource>{
-    NSIndexPath * myIndexPath;
 }
 
 
@@ -33,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSXMLParser *xmlParserList;
 
-//imkb30-List
+//newLast
 @property (nonatomic, strong) NSMutableArray *arrIMKBData;
 
 //List
@@ -44,9 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 //imkb30
-@property (nonatomic, strong) NSMutableArray *arrNeighboursData;
+@property (nonatomic, strong) NSMutableArray *arrData;
 
-//@property (nonatomic, strong) NSMutableArray *arrData;
 @property (nonatomic, strong) NSMutableDictionary *dictTempDataStorage; //we’ll temporarily store the two values we seek until we add it to the array.
 @property (nonatomic, strong) NSMutableString *foundValue; // used to store the found characters of the elements of interest.
 @property (nonatomic, strong) NSString *currentElement; // will be assigned with the name of the element that is parsed at any moment

@@ -21,15 +21,10 @@
 
 @property (strong, nonatomic) NSMutableString *key;
 
-//@property (strong, nonatomic) NSMutableData *responseStringList;
-
 @property(nonatomic, strong)NSMutableArray *resultsList;
 
 @property (nonatomic, strong) NSXMLParser *xmlParserList;
-@property (nonatomic, strong) NSMutableArray *arrData; // will contain all of the desired data after the parsing has finished
-//@property (nonatomic, strong) NSMutableDictionary *dictTempDataStorage; //we’ll temporarily store the two values we seek until we add it to the array.
-//@property (nonatomic, strong) NSMutableString *foundValue; // used to store the found characters of the elements of interest.
-//@property (nonatomic, strong) NSString *currentElement; // will be assigned with the name of the element that is parsed at any moment
+@property (nonatomic, strong) NSMutableArray *arrData; 
 
 @end
 

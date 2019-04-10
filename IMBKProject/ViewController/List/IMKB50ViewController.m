@@ -36,7 +36,7 @@
 
 -(void) get {
     
-    for (NSDictionary *item in self.arrNeighboursData) {
+    for (NSDictionary *item in self.arrData) {
         NSString *string = [item objectForKey:@"Symbol"];
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", string];
         NSArray *results = [self.arrListData filteredArrayUsingPredicate:predicate];
@@ -86,15 +86,13 @@
 //  XML Parse
 
 -(void)parserDidStartDocument:(NSXMLParser *)parser{
-    // Initialize the neighbours data array.
-    self.arrNeighboursData = [[NSMutableArray alloc] init];
+    // Initialize the data array.
+    self.arrData = [[NSMutableArray alloc] init];
     self.arrListData = [[NSMutableArray alloc] init];
     
 }
 
 -(void)parserDidEndDocument:(NSXMLParser *)parser{
-    //    NSLog(@"%@",self.arrSymbolData);
-    //    self.temp = self.arrSymbolData[0];;
     [self get];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tbl50 reloadData];
@@ -102,8 +100,7 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName attributes:(NSDictionary<NSString *, NSString *> *)attributeDict{
-    // If the current element name is equal to "StockandIndex" then initialize the temporary dictionary.
-    
+    // If the current element name is equal to "IMKB50" then initialize the temporary dictionary.
     if ([elementName isEqualToString:@"IMKB50"]) {
         self.dictTempDataStorage = [[NSMutableDictionary alloc] init];
     }
@@ -135,8 +132,8 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName{
     
     if ([elementName isEqualToString:@"IMKB50"]) {
-        // If the closing element equals to "geoname" then the all the data of a neighbour country has been parsed and the dictionary should be added to the neighbours data array.
-        [self.arrNeighboursData addObject:[[NSDictionary alloc] initWithDictionary:self.dictTempDataStorage]];
+        // If the closing element equals to "IMKB50" then the all the data has been parsed and the dictionary should be added to the data array.
+        [self.arrData addObject:[[NSDictionary alloc] initWithDictionary:self.dictTempDataStorage]];
     }
     else if ([elementName isEqualToString:@"Fund"]){
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"Fund"];
@@ -151,7 +148,6 @@
         [self.dictTempDataStorage setObject:[NSString stringWithString:self.foundValue] forKey:@"Symbol"];
     }
     if ([elementName isEqualToString:@"StockandIndex"]) {
-        // If the closing element equals to "geoname" then the all the data of a neighbour country has been parsed and the dictionary should be added to the neighbours data array.
         [self.arrListData addObject:[[NSDictionary alloc] initWithDictionary:self.dictTempListStorage]];
         
     }
@@ -245,7 +241,6 @@
         detailVC.countData = self.countData;
         detailVC.changeData = self.changeData;
         detailVC.key = self.myKey;
-        
         //        NSLog(@"%@" , myIndexPath);
     }
 }

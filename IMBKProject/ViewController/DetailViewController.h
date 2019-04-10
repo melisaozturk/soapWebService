@@ -28,7 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSXMLParser *xmlParser;
 
 
-@property (nonatomic, strong) NSMutableArray *arrNeighboursData;
 @property (nonatomic, strong) NSMutableArray *arrData;
 @property (nonatomic, strong) NSMutableDictionary *dictTempDataStorage; //we’ll temporarily store the two values we seek until we add it to the array.
 @property (nonatomic, strong) NSMutableString *foundValue; // used to store the found characters of the elements of interest.
