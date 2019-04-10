@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kzr-nw-LHG">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Entry View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="EntryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VERİPARK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgb-F3-kYa">
+                                <rect key="frame" x="111.5" y="151" width="97" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezd-w8-Wu3">
+                                <rect key="frame" x="26.5" y="225" width="267" height="30"/>
+                                <color key="backgroundColor" red="0.78971016839999997" green="0.78971016839999997" blue="0.78971016839999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="IMKB HİSSE SENETLERİ/ENDEKSLER">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qYS-Mo-4GJ" kind="show" id="Yug-rs-czn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Fgb-F3-kYa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4dV-zn-wg3"/>
+                            <constraint firstItem="Ezd-w8-Wu3" firstAttribute="top" secondItem="Fgb-F3-kYa" secondAttribute="bottom" constant="50" id="4k0-HI-Rxe"/>
+                            <constraint firstItem="Ezd-w8-Wu3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GTA-CH-yQx"/>
+                            <constraint firstItem="Ezd-w8-Wu3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OYf-wh-kuG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cst-WF-DVH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1136.25" y="75"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Xqs-sA-0by">
+            <objects>
+                <viewController id="qYS-Mo-4GJ" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iW1-kw-BfO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="NTg-6X-sR4">
+                                <rect key="frame" x="20" y="75" width="280" height="330"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJ2-bS-145">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
+                                        <color key="backgroundColor" red="0.78971016839999997" green="0.78971016839999997" blue="0.78971016839999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="jHB-nz-ues"/>
+                                        </constraints>
+                                        <state key="normal" title="Hisse Ve Endeksler">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="1ES-wb-XPb" kind="show" id="EUz-7E-J65"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="176-bz-Gyc">
+                                        <rect key="frame" x="0.0" y="60" width="280" height="30"/>
+                                        <color key="backgroundColor" red="0.78971016839999997" green="0.78971016839999997" blue="0.78971016839999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="F9P-OA-kld"/>
+                                        </constraints>
+                                        <state key="normal" title="IMKB Yükselenler">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="UCd-TG-gWp" kind="show" id="7SR-fg-FCH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xg-LU-lLx">
+                                        <rect key="frame" x="0.0" y="120" width="280" height="30"/>
+                                        <color key="backgroundColor" red="0.78971016839999997" green="0.78971016839999997" blue="0.78971016839999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="5Aw-Md-SEn"/>
+                                        </constraints>
+                                        <state key="normal" title="IMKB Düşenler">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Zl8-67-SQk" kind="show" id="U38-37-Khg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIJ-kH-w6a">
+                                        <rect key="frame" x="0.0" y="180" width="280" height="30"/>
+                                        <color key="backgroundColor" red="0.78971016839999997" green="0.78971016839999997" blue="0.78971016839999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="kCh-U1-0uR"/>
+                                        </constraints>
+                                        <state key="normal" title="IMKB Hacme Göre - 30">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="1nw-0F-E4O" kind="show" id="laI-fw-ZQq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0OT-cf-0Jc">
+                                        <rect key="frame" x="0.0" y="240" width="280" height="30"/>
+                                        <color key="backgroundColor" red="0.78971016839999997" green="0.78971016839999997" blue="0.78971016839999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="igH-Ko-m9n"/>
+                                        </constraints>
+                                        <state key="normal" title="IMKB Hacme Göre - 50">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="RVp-wf-xhl" kind="show" id="IRA-k9-0w6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPJ-CY-rmd">
+                                        <rect key="frame" x="0.0" y="300" width="280" height="30"/>
+                                        <color key="backgroundColor" red="0.78971016839999997" green="0.78971016839999997" blue="0.78971016839999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="MGg-kl-Tdq"/>
+                                        </constraints>
+                                        <state key="normal" title="IMKB Hacme Göre - 100">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="O1s-IH-Fpw" kind="show" id="Mra-ZE-Xc7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jJ2-bS-145" firstAttribute="leading" secondItem="NTg-6X-sR4" secondAttribute="leading" id="3sr-oH-bQr"/>
+                                    <constraint firstAttribute="trailing" secondItem="176-bz-Gyc" secondAttribute="trailing" id="4RI-cM-PMo"/>
+                                    <constraint firstAttribute="trailing" secondItem="jJ2-bS-145" secondAttribute="trailing" id="5FH-dN-9Jt"/>
+                                    <constraint firstItem="6Xg-LU-lLx" firstAttribute="leading" secondItem="NTg-6X-sR4" secondAttribute="leading" id="BQM-8g-qXb"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Xg-LU-lLx" secondAttribute="trailing" id="IQ1-RY-yPE"/>
+                                    <constraint firstAttribute="trailing" secondItem="oPJ-CY-rmd" secondAttribute="trailing" id="KNc-1w-LtY"/>
+                                    <constraint firstItem="oPJ-CY-rmd" firstAttribute="leading" secondItem="NTg-6X-sR4" secondAttribute="leading" id="YcJ-qn-Zio"/>
+                                    <constraint firstItem="176-bz-Gyc" firstAttribute="leading" secondItem="NTg-6X-sR4" secondAttribute="leading" id="Z35-aU-bnZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="0OT-cf-0Jc" secondAttribute="trailing" id="b40-2z-FZR"/>
+                                    <constraint firstAttribute="trailing" secondItem="TIJ-kH-w6a" secondAttribute="trailing" id="hlf-kY-WJz"/>
+                                    <constraint firstItem="TIJ-kH-w6a" firstAttribute="leading" secondItem="NTg-6X-sR4" secondAttribute="leading" id="sKn-0U-RJh"/>
+                                    <constraint firstItem="0OT-cf-0Jc" firstAttribute="leading" secondItem="NTg-6X-sR4" secondAttribute="leading" id="tgk-qs-LQK"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="76F-fL-bp0" firstAttribute="trailing" secondItem="NTg-6X-sR4" secondAttribute="trailing" constant="20" id="OOB-tc-yfM"/>
+                            <constraint firstItem="NTg-6X-sR4" firstAttribute="centerY" secondItem="iW1-kw-BfO" secondAttribute="centerY" id="SfW-xq-GxS"/>
+                            <constraint firstItem="NTg-6X-sR4" firstAttribute="leading" secondItem="76F-fL-bp0" secondAttribute="leading" constant="20" id="ZYH-yx-AGO"/>
+                            <constraint firstItem="NTg-6X-sR4" firstAttribute="centerX" secondItem="iW1-kw-BfO" secondAttribute="centerX" id="gxN-g2-mYa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="76F-fL-bp0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6gR-28-alt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1955.625" y="75"/>
+        </scene>
+        <!--Lowest-->
+        <scene sceneID="zY5-Jn-t0J">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Lowest" id="Zl8-67-SQk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hsl-Bw-7r8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2587" y="59"/>
+        </scene>
+        <!--Highest-->
+        <scene sceneID="QKx-PR-kM9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Highest" id="UCd-TG-gWp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MAd-VS-ORt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2660" y="-10"/>
+        </scene>
+        <!--IMKB30-->
+        <scene sceneID="AeH-mJ-TC6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="IMKB30" id="1nw-0F-E4O" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u8j-qM-GMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2580" y="124"/>
+        </scene>
+        <!--IMKB100-->
+        <scene sceneID="Z7D-5d-c0J">
+            <objects>
+                <viewControllerPlaceholder storyboardName="IMKB100" id="O1s-IH-Fpw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10d-sg-7TD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2588" y="208"/>
+        </scene>
+        <!--IMKB50-->
+        <scene sceneID="KpK-OW-wD0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="IMKB50" id="RVp-wf-xhl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ige-qb-lmY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2588" y="301"/>
+        </scene>
+        <!--StockAndIndex-->
+        <scene sceneID="iBc-ef-nVc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StockAndIndex" id="1ES-wb-XPb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1G2-1A-Da1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2588" y="-78"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3Ob-20-LJR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kzr-nw-LHG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kz6-9h-seV">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="46a-aM-hiZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kfo-1N-g8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="201" y="75"/>
+        </scene>
+    </scenes>
+</document>
