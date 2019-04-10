@@ -165,7 +165,7 @@
 			children = (
 				1ED9F5362257BC700063FE66 /* IMBKProject */,
 				1ED9F54F2257BC730063FE66 /* IMBKProjectTests */,
-				1ED9F55A2257BC730063FE66 /* IMBKProjectUITests */,
+				1ED9F55A2257BC730063FE66 /* IMKBProjectUITests */,
 				1ED9F5352257BC700063FE66 /* Products */,
 				1ED9F570225802920063FE66 /* Frameworks */,
 			);
@@ -205,13 +205,13 @@
 			path = IMBKProjectTests;
 			sourceTree = "<group>";
 		};
-		1ED9F55A2257BC730063FE66 /* IMBKProjectUITests */ = {
+		1ED9F55A2257BC730063FE66 /* IMKBProjectUITests */ = {
 			isa = PBXGroup;
 			children = (
 				1ED9F55B2257BC730063FE66 /* IMBKProjectUITests.m */,
 				1ED9F55D2257BC730063FE66 /* Info.plist */,
 			);
-			path = IMBKProjectUITests;
+			path = IMKBProjectUITests;
 			sourceTree = "<group>";
 		};
 		1ED9F5692257BD2F0063FE66 /* ViewController */ = {
