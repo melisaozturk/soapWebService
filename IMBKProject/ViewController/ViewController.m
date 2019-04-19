@@ -15,7 +15,6 @@
 @end
 
 @implementation ViewController
-@synthesize key;
 
 - (void)viewDidLoad
 {

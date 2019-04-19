@@ -16,14 +16,6 @@
 @end
 
 @implementation IMKB30ListViewController
-@synthesize symbolData;
-@synthesize myKey;
-@synthesize changeData;
-@synthesize countData;
-@synthesize volumeData;
-@synthesize lowData;
-@synthesize highData;
-@synthesize priceData;
 
 - (void)viewDidLoad {
     [super viewDidLoad];

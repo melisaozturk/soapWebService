@@ -16,14 +16,6 @@
 @end
 
 @implementation LowestListViewController
-@synthesize myKey;
-@synthesize changeData;
-@synthesize countData;
-@synthesize volumeData;
-@synthesize lowData;
-@synthesize highData;
-@synthesize priceData;
-@synthesize symbolData;
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -16,16 +16,7 @@
 @end
 
 @implementation IMKB100ViewController
-@synthesize symbolData;
-@synthesize myKey;
-@synthesize changeData;
-@synthesize countData;
-@synthesize volumeData;
-@synthesize lowData;
-@synthesize highData;
-@synthesize priceData;
 
-@synthesize searchBar;
 BOOL isFiltered;
 
 - (void)viewDidLoad {
